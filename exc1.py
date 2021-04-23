@@ -13,6 +13,7 @@ import matplotlib.pyplot as plt
 
 j = range(5,101,5) # also the x axis
 i = range(1,11,1)
+x = [*j]
 G_connectivity = [[0 for w in range(10)]for e in range(20)]
 w = 0
 e = 0
@@ -22,7 +23,7 @@ k = 0
 for c in j:
     for n in i:
         num_of_nodes = 20
-        p = 10/100
+        p =x[w] /100
         G = nx.gnp_random_graph(num_of_nodes,p)
         if(nx.is_connected(G)==True):
             G_connectivity[w][e] = 1
@@ -41,7 +42,7 @@ plt.ylim(1,100)
 # naming the x axis
 plt.xlabel('q')
 # naming the y axis
-plt.ylabel('procentage')
+plt.ylabel('procentage (%)')
 # giving a title to my graph
 plt.title('procentage of connectivity as func of q')
 
